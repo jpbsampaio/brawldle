@@ -1,3 +1,11 @@
+// TODO: json com os brawlers
+// TODO: Seleção de brawler diário
+// TODO: Melhorar a UI
+// TODO: Persistência de dados (localStorage)
+// TODO: compartilhamento do resultado com emojis
+// TODO: Animações com framer-motion
+// TODO: ranking de acertos semanais
+
 "use client";
 
 import {useState} from "react";

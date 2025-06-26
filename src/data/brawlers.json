@@ -2,17 +2,65 @@
   {
     "name": "Shelly",
     "rarity": "Inicial",
-    "role": "Lutador",
+    "role": "Algoz",
     "gender": "Feminino",
     "releaseYear": 2017,
     "imageUrl": "/brawlers/shelly.png"
   },
   {
     "name": "Colt",
-    "rarity": "Inicial",
-    "role": "Atirador",
+    "rarity": "Raro",
+    "role": "Tiro Preciso",
     "gender": "Masculino",
     "releaseYear": 2017,
     "imageUrl": "/brawlers/colt.png"
+  },
+  {
+    "name": "Bull",
+    "rarity": "Raro",
+    "role": "Tanque",
+    "gender": "Masculino",
+    "releaseYear": 2017,
+    "imageUrl": "/brawlers/bull.png"
+  },
+  {
+    "name": "Jessie",
+    "rarity": "Super-raro",
+    "role": "Destruidor",
+    "gender": "Feminino",
+    "releaseYear": 2018,
+    "imageUrl": "/brawlers/jessie.png"
+  },
+  {
+    "name": "Bo",
+    "rarity": "Épico",
+    "role": "Controle",
+    "gender": "Masculino",
+    "releaseYear": 2018,
+    "imageUrl": "/brawlers/bo.png"
+  },
+  {
+    "name": "Mortis",
+    "rarity": "Mítico",
+    "role": "Algoz",
+    "gender": "Masculino",
+    "releaseYear": 2018,
+    "imageUrl": "/brawlers/mortis.png"
+  },
+  {
+    "name": "Spike",
+    "rarity": "Lendário",
+    "role": "Controle",
+    "gender": "Masculino",
+    "releaseYear": 2018,
+    "imageUrl": "/brawlers/spike.png"
+  },
+  {
+    "name": "Kaze",
+    "rarity": "Ultra Lendário",
+    "role": "Desconhecido",
+    "gender": "Masculino",
+    "releaseYear": 2024,
+    "imageUrl": "/brawlers/kaze.png"
   }
 ]
