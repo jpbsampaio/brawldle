@@ -98,45 +98,44 @@ export default function Home() {
 
   return (
     <div className="flex flex-col min-h-screen bg-blue-900 text-white p-4">
-      <header className="flex justify-between items-center mb-6 border-b border-blue-700 pb-4">
-        <div className="flex-1">
-          <button onClick={() => setShowRules(!showRules)} className="rounded-full bg-yellow-500 p-2">
-            <span className="text-blue-900 font-bold">?</span>
-          </button>
-        </div>
+      <header className="flex justify-between items-center mb-8 pb-4 border-b border-blue-700">
+        <button onClick={() => setShowRules(!showRules)} className="rounded-full bg-yellow-400 text-blue-900 font-bold w-10 h-10 flex items-center justify-center shadow-lg hover:scale-105 transition">
+          ?
+        </button>
 
-        <h1 className="text-2xl md:text-4xl font-bold text-center flex-grow text-yellow-400">
+        <h1 className="text-3xl md:text-5xl font-black text-yellow-400 tracking-wide">
           BRAWL<span className="text-red-500">DLE</span>
         </h1>
 
-        <div className="flex-1 flex justify-end">
-        <span className="text-yellow-400">
-          #1
-        </span>
-        </div>
+        <span className="text-yellow-300 font-semibold">#1</span>
       </header>
 
+
       {showRules && (
-        <div className="bg-blue-800 p-4 rounded-lg mb-6">
-          <h2 className="text-xl font-bold mb-2 text-yellow-400">Como jogar:</h2>
-          <ul className="list-disc pl-5 space-y-1">
-            <li>Adivinhe o brawler secreto do dia em 6 tentativas.</li>
-            <li>Cada palpite deve ser um brawler válido do Brawl Stars.</li>
-            <li>Após cada palpite, as cores mudarão para mostrar o quão perto seu palpite está.</li>
-            <li><span className="bg-green-500 px-1 rounded">Verde</span> significa correto!</li>
-            <li><span className="bg-yellow-500 px-1 rounded text-black">Amarelo</span> com seta significa que o valor
-              real é maior ou menor.
+        <div className="bg-blue-800 border border-blue-700 p-5 rounded-xl shadow-lg mb-6">
+          <h2 className="text-2xl font-bold text-yellow-400 mb-3">Como jogar:</h2>
+          <ul className="space-y-2 list-disc pl-6 text-sm">
+            <li>Adivinhe o brawler secreto do dia em até 6 tentativas.</li>
+            <li>Cada palpite deve ser um brawler válido.</li>
+            <li>
+              <span className="bg-green-500 text-white px-2 py-0.5 rounded">Verde</span> = Correto
             </li>
-            <li><span className="bg-gray-700 px-1 rounded">Cinza</span> significa incorreto.</li>
+            <li>
+              <span className="bg-yellow-400 text-black px-2 py-0.5 rounded">Amarelo</span> = Maior ou menor
+            </li>
+            <li>
+              <span className="bg-gray-700 text-white px-2 py-0.5 rounded">Cinza</span> = Incorreto
+            </li>
           </ul>
           <button
             onClick={() => setShowRules(false)}
-            className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded mt-3"
+            className="mt-4 px-5 py-2 bg-yellow-400 hover:bg-yellow-500 text-blue-900 font-bold rounded-full transition"
           >
-            Fechar
+            Entendi!
           </button>
         </div>
       )}
+
 
       {gameWon ? (
         <div className="text-center py-8 bg-green-700 rounded-lg mb-6">
@@ -157,50 +156,37 @@ export default function Home() {
         </div>
       ) : (
         <div className="flex flex-col items-center mb-6">
-          <div className="w-full max-w-lg flex mb-4 relative">
+          <div className="w-full max-w-xl relative mb-6">
             <input
+              className="w-full p-4 rounded-t-xl text-black text-lg focus:outline-none"
               type="text"
+              placeholder="Digite o nome do Brawler..."
               value={currentGuess}
               onChange={(e) => setCurrentGuess(e.target.value)}
-              placeholder="Digite o nome de um brawler..."
-              className="flex-grow rounded-l-lg p-3 text-black"
-              disabled={gameWon}
               onFocus={() => currentGuess.length > 0 && setShowSuggestions(true)}
-              onBlur={() => setTimeout(() => setShowSuggestions(false), 150)}
+              onBlur={() => setTimeout(() => setShowSuggestions(false), 200)}
             />
+
             <button
+              className="absolute top-0 right-0 px-6 py-4 bg-yellow-400 hover:bg-yellow-500 text-blue-900 font-bold rounded-tr-xl rounded-bl-xl transition"
               onClick={handleGuess}
-              disabled={gameWon || !currentGuess}
-              className="bg-yellow-500 hover:bg-yellow-600 text-blue-900 font-bold px-6 py-3 rounded-r-lg"
+              disabled={!currentGuess || gameWon}
             >
               Enviar
             </button>
 
             {showSuggestions && suggestions.length > 0 && (
-              <div className="absolute top-full left-0 right-0 mt-1 bg-white text-black rounded shadow-lg z-10">
-                <ul>
-                  {suggestions.map((brawler, index) => (
-                    <li
-                      key={index}
-                      className="flex items-center p-2 hover:bg-gray-100 cursor-pointer"
-                      onClick={() => selectSuggestion(brawler.name)}
-                    >
-                      <div className="w-8 h-8 mr-2 relative overflow-hidden rounded-full">
-                        <Image
-                          src={brawler.imageUrl}
-                          alt={brawler.name}
-                          width={32}
-                          height={32}
-                          className="object-cover"
-                        />
-                      </div>
-                      <span>{brawler.name}</span>
-                    </li>
-                  ))}
-                </ul>
+              <div className="absolute z-10 w-full bg-white text-black rounded-b-xl shadow-md overflow-hidden">
+                {suggestions.map((b, i) => (
+                  <div key={i} onClick={() => selectSuggestion(b.name)} className="flex items-center p-2 hover:bg-gray-100 cursor-pointer gap-3">
+                    <Image src={b.imageUrl} alt={b.name} width={32} height={32} className="rounded-full" />
+                    <span className="text-sm">{b.name}</span>
+                  </div>
+                ))}
               </div>
             )}
           </div>
+
         </div>
       )}
 
