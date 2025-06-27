@@ -1,66 +1,762 @@
 [
   {
-    "name": "Shelly",
-    "rarity": "Inicial",
-    "role": "Algoz",
-    "gender": "Feminino",
-    "releaseYear": 2017,
-    "imageUrl": "/brawlers/shelly.png"
-  },
-  {
-    "name": "Colt",
-    "rarity": "Raro",
-    "role": "Tiro Preciso",
+    "name": "8-Bit",
+    "rarity": "Épico",
+    "role": "Dano",
     "gender": "Masculino",
-    "releaseYear": 2017,
-    "imageUrl": "/brawlers/colt.png"
+    "releaseYear": 2019,
+    "imageUrl": "https://static.wikia.nocookie.net/brawlstars/images/c/c1/8-Bit_Skin-Default.png/revision/latest/scale-to-width-down/268?cb=20210812182214"
   },
   {
-    "name": "Bull",
-    "rarity": "Raro",
+    "name": "Alli",
+    "rarity": "Épico",
+    "role": "Tanque",
+    "gender": "Feminino",
+    "releaseYear": 2025,
+    "imageUrl": "https://static.wikia.nocookie.net/brawlstars/images/b/b9/Alli_Skin-Default.png/revision/latest/scale-to-width-down/268?cb=20250625150836"
+  },
+  {
+    "name": "Amber",
+    "rarity": "Lendário",
+    "role": "Dano",
+    "gender": "Feminino",
+    "releaseYear": 2020,
+    "imageUrl": "https://static.wikia.nocookie.net/brawlstars/images/a/a3/Amber_Skin-Default.png/revision/latest/scale-to-width-down/268?cb=20230123182941"
+  },
+  {
+    "name": "Angelo",
+    "rarity": "Épico",
+    "role": "Suporte",
+    "gender": "Masculino",
+    "releaseYear": 2024,
+    "imageUrl": "https://static.wikia.nocookie.net/brawlstars/images/3/3e/Angelo_Skin-Default.png/revision/latest/scale-to-width-down/268?cb=20240226185621"
+  },
+  {
+    "name": "Ash",
+    "rarity": "Cromático",
     "role": "Tanque",
     "gender": "Masculino",
-    "releaseYear": 2017,
-    "imageUrl": "/brawlers/bull.png"
+    "releaseYear": 2021,
+    "imageUrl": "https://static.wikia.nocookie.net/brawlstars/images/4/40/Ash_Skin-Default.png/revision/latest/scale-to-width-down/268?cb=20230704155152"
   },
   {
-    "name": "Jessie",
-    "rarity": "Super-raro",
-    "role": "Destruidor",
+    "name": "Barley",
+    "rarity": "Raro",
+    "role": "Controle",
+    "gender": "Masculino",
+    "releaseYear": 2017,
+    "imageUrl": "https://static.wikia.nocookie.net/brawlstars/images/3/3c/Barley_Skin-Default.png/revision/latest/scale-to-width-down/267?cb=20200331165158"
+  },
+  {
+    "name": "Bea",
+    "rarity": "Épico",
+    "role": "Dano",
     "gender": "Feminino",
-    "releaseYear": 2018,
-    "imageUrl": "/brawlers/jessie.png"
+    "releaseYear": 2019,
+    "imageUrl": "https://static.wikia.nocookie.net/brawlstars/images/7/73/Bea_Skin-Default.png/revision/latest/scale-to-width-down/268?cb=20210319100234"
+  },
+  {
+    "name": "Belle",
+    "rarity": "Cromático",
+    "role": "Dano",
+    "gender": "Feminino",
+    "releaseYear": 2021,
+    "imageUrl": "https://static.wikia.nocookie.net/brawlstars/images/d/d9/Belle_Skin-Default.png/revision/latest/scale-to-width-down/268?cb=20210419032608"
+  },
+  {
+    "name": "Berry",
+    "rarity": "Épico",
+    "role": "Suporte",
+    "gender": "Feminino",
+    "releaseYear": 2024,
+    "imageUrl": "https://static.wikia.nocookie.net/brawlstars/images/f/f6/Berry_Skin-Default.png/revision/latest/scale-to-width-down/268?cb=20240624212834"
+  },
+  {
+    "name": "Bibi",
+    "rarity": "Épico",
+    "role": "Batedor",
+    "gender": "Feminino",
+    "releaseYear": 2019,
+    "imageUrl": "https://static.wikia.nocookie.net/brawlstars/images/c/c4/Bibi_Skin-Default.png/revision/latest/scale-to-width-down/268?cb=20210903094636"
   },
   {
     "name": "Bo",
+    "rarity": "Troféu de Estrada",
+    "role": "Dano",
+    "gender": "Masculino",
+    "releaseYear": 2017,
+    "imageUrl": "https://static.wikia.nocookie.net/brawlstars/images/e/ee/Bo_Skin-Default.png/revision/latest/scale-to-width-down/268?cb=20220921033755"
+  },
+  {
+    "name": "Bonnie",
     "rarity": "Épico",
-    "role": "Controle",
-    "gender": "Masculino",
-    "releaseYear": 2018,
-    "imageUrl": "/brawlers/bo.png"
+    "role": "Híbrido",
+    "gender": "Feminino",
+    "releaseYear": 2022,
+    "imageUrl": "https://static.wikia.nocookie.net/brawlstars/images/9/90/Bonnie_Skin-Default.png/revision/latest/scale-to-width-down/268?cb=20220527173920"
   },
   {
-    "name": "Mortis",
-    "rarity": "Mítico",
-    "role": "Algoz",
+    "name": "Brock",
+    "rarity": "Troféu de Estrada",
+    "role": "Dano",
     "gender": "Masculino",
-    "releaseYear": 2018,
-    "imageUrl": "/brawlers/mortis.png"
+    "releaseYear": 2017,
+    "imageUrl": "https://static.wikia.nocookie.net/brawlstars/images/7/70/Brock_Skin-Default.png/revision/latest/scale-to-width-down/268?cb=20240831000102"
   },
   {
-    "name": "Spike",
-    "rarity": "Lendário",
-    "role": "Controle",
+    "name": "Bull",
+    "rarity": "Troféu de Estrada",
+    "role": "Tanque",
+    "gender": "Masculino",
+    "releaseYear": 2017,
+    "imageUrl": "https://static.wikia.nocookie.net/brawlstars/images/b/b7/Bull_Skin-Default.png/revision/latest/scale-to-width-down/268?cb=20230907104019"
+  },
+  {
+    "name": "Buster",
+    "rarity": "Cromático",
+    "role": "Suporte",
+    "gender": "Masculino",
+    "releaseYear": 2022,
+    "imageUrl": "https://static.wikia.nocookie.net/brawlstars/images/e/e3/Buster_Skin-Default.png/revision/latest/scale-to-width-down/268?cb=20230204163432"
+  },
+  {
+    "name": "Buzz",
+    "rarity": "Cromático",
+    "role": "Tanque",
+    "gender": "Masculino",
+    "releaseYear": 2021,
+    "imageUrl": "https://static.wikia.nocookie.net/brawlstars/images/6/62/Buzz_Skin-Default.png/revision/latest/scale-to-width-down/268?cb=20220123071159"
+  },
+  {
+    "name": "Buzz Lightyear",
+    "rarity": "Colaboração",
+    "role": "Tanque",
+    "gender": "Masculino",
+    "releaseYear": 2024,
+    "imageUrl": "https://static.wikia.nocookie.net/brawlstars/images/2/26/Buzz_Lightyear_Skin-Default.png/revision/latest/scale-to-width-down/268?cb=20241210160606"
+  },
+  {
+    "name": "Byron",
+    "rarity": "Épico",
+    "role": "Suporte",
+    "gender": "Masculino",
+    "releaseYear": 2020,
+    "imageUrl": "https://static.wikia.nocookie.net/brawlstars/images/4/41/Byron_Skin-Default.png/revision/latest/scale-to-width-down/268?cb=20220608200025"
+  },
+  {
+    "name": "Carl",
+    "rarity": "Raro",
+    "role": "Tanque",
     "gender": "Masculino",
     "releaseYear": 2018,
-    "imageUrl": "/brawlers/spike.png"
+    "imageUrl": "https://static.wikia.nocookie.net/brawlstars/images/4/46/Carl_Skin-Default.png/revision/latest/scale-to-width-down/268?cb=20220125184411"
+  },
+  {
+    "name": "Charlie",
+    "rarity": "Épico",
+    "role": "Dano",
+    "gender": "Masculino",
+    "releaseYear": 2023,
+    "imageUrl": "https://static.wikia.nocookie.net/brawlstars/images/0/07/Charlie_Skin-Default.png/revision/latest/scale-to-width-down/268?cb=20231022194111"
+  },
+  {
+    "name": "Chester",
+    "rarity": "Épico",
+    "role": "Dano",
+    "gender": "Masculino",
+    "releaseYear": 2023,
+    "imageUrl": "https://static.wikia.nocookie.net/brawlstars/images/4/48/Chester_Skin-Default.png/revision/latest/scale-to-width-down/267?cb=20230206163847"
+  },
+  {
+    "name": "Chuck",
+    "rarity": "Épico",
+    "role": "Tanque",
+    "gender": "Masculino",
+    "releaseYear": 2023,
+    "imageUrl": "https://static.wikia.nocookie.net/brawlstars/images/a/a6/Chuck_Skin-Default.png/revision/latest/scale-to-width-down/268?cb=20230907154111"
+  },
+  {
+    "name": "Clancy",
+    "rarity": "Épico",
+    "role": "Suporte",
+    "gender": "Masculino",
+    "releaseYear": 2025,
+    "imageUrl": "https://static.wikia.nocookie.net/brawlstars/images/9/90/Clancy_Skin-Default.png/revision/latest/scale-to-width-down/268?cb=20250618230811"
+  },
+  {
+    "name": "Colette",
+    "rarity": "Raro",
+    "role": "Dano",
+    "gender": "Feminino",
+    "releaseYear": 2020,
+    "imageUrl": "https://static.wikia.nocookie.net/brawlstars/images/6/63/Colette_Skin-Default.png/revision/latest/scale-to-width-down/267?cb=20201113164723"
+  },
+  {
+    "name": "Colt",
+    "rarity": "Épico",
+    "role": "Dano",
+    "gender": "Masculino",
+    "releaseYear": 2023,
+    "imageUrl": "https://static.wikia.nocookie.net/brawlstars/images/8/8a/Colt_Skin-Default.png/revision/latest/scale-to-width-down/268?cb=20231111120541"
+  },
+  {
+    "name": "Cordelius",
+    "rarity": "Épico",
+    "role": "Suporte",
+    "gender": "Masculino",
+    "releaseYear": 2024,
+    "imageUrl": "https://static.wikia.nocookie.net/brawlstars/images/1/1d/Cordelius_Skin-Default.png/revision/latest/scale-to-width-down/268?cb=20240301211603"
+  },
+  {
+    "name": "Crow",
+    "rarity": "Épico",
+    "role": "Dano",
+    "gender": "Masculino",
+    "releaseYear": 2020,
+    "imageUrl": "https://static.wikia.nocookie.net/brawlstars/images/a/a2/Crow_Skin-Default.png/revision/latest/scale-to-width-down/268?cb=20201107182328"
+  },
+  {
+    "name": "Darryl",
+    "rarity": "Raro",
+    "role": "Tanque",
+    "gender": "Masculino",
+    "releaseYear": 2018,
+    "imageUrl": "https://static.wikia.nocookie.net/brawlstars/images/6/66/Darryl_Skin-Default.png/revision/latest/scale-to-width-down/268?cb=20220422040724"
+  },
+  {
+    "name": "Doug",
+    "rarity": "Épico",
+    "role": "Suporte",
+    "gender": "Masculino",
+    "releaseYear": 2023,
+    "imageUrl": "https://static.wikia.nocookie.net/brawlstars/images/4/4d/Doug_Skin-Default.png/revision/latest/scale-to-width-down/268?cb=20230627202920"
+  },
+  {
+    "name": "Draco",
+    "rarity": "Épico",
+    "role": "Dano",
+    "gender": "Masculino",
+    "releaseYear": 2025,
+    "imageUrl": "https://static.wikia.nocookie.net/brawlstars/images/f/fe/Draco_Skin-Default.png/revision/latest/scale-to-width-down/268?cb=20250208041054"
+  },
+  {
+    "name": "Dynamike",
+    "rarity": "Raro",
+    "role": "Dano",
+    "gender": "Masculino",
+    "releaseYear": 2018,
+    "imageUrl": "https://static.wikia.nocookie.net/brawlstars/images/6/6e/Dynamike_Skin-Default.png/revision/latest/scale-to-width-down/268?cb=20201118121329"
+  },
+  {
+    "name": "Edgar",
+    "rarity": "Épico",
+    "role": "Dano",
+    "gender": "Masculino",
+    "releaseYear": 2023,
+    "imageUrl": "https://static.wikia.nocookie.net/brawlstars/images/2/2b/Edgar_Skin-Default.png/revision/latest/scale-to-width-down/268?cb=20230219113721"
+  },
+  {
+    "name": "El Primo",
+    "rarity": "Épico",
+    "role": "Tanque",
+    "gender": "Masculino",
+    "releaseYear": 2025,
+    "imageUrl": "https://static.wikia.nocookie.net/brawlstars/images/0/04/El_Primo_Skin-Default.png/revision/latest/scale-to-width-down/268?cb=20250215023611"
+  },
+  {
+    "name": "Emz",
+    "rarity": "Raro",
+    "role": "Dano",
+    "gender": "Feminino",
+    "releaseYear": 2019,
+    "imageUrl": "https://static.wikia.nocookie.net/brawlstars/images/e/e0/Emz_Skin-Default.png/revision/latest/scale-to-width-down/268?cb=20201112165906"
+  },
+  {
+    "name": "Eve",
+    "rarity": "Épico",
+    "role": "Suporte",
+    "gender": "Feminino",
+    "releaseYear": 2023,
+    "imageUrl": "https://static.wikia.nocookie.net/brawlstars/images/3/3e/Eve_Skin-Default.png/revision/latest/scale-to-width-down/268?cb=20230205211705"
+  },
+  {
+    "name": "Fang",
+    "rarity": "Épico",
+    "role": "Dano",
+    "gender": "Masculino",
+    "releaseYear": 2023,
+    "imageUrl": "https://static.wikia.nocookie.net/brawlstars/images/4/48/Fang_Skin-Default.png/revision/latest/scale-to-width-down/268?cb=20230205211143"
+  },
+  {
+    "name": "Finx",
+    "rarity": "Épico",
+    "role": "Suporte",
+    "gender": "Masculino",
+    "releaseYear": 2025,
+    "imageUrl": "https://static.wikia.nocookie.net/brawlstars/images/3/31/Finx_Skin-Default.png/revision/latest/scale-to-width-down/268?cb=20250225085621"
+  },
+  {
+    "name": "Frank",
+    "rarity": "Épico",
+    "role": "Tanque",
+    "gender": "Masculino",
+    "releaseYear": 2023,
+    "imageUrl": "https://static.wikia.nocookie.net/brawlstars/images/5/55/Frank_Skin-Default.png/revision/latest/scale-to-width-down/268?cb=20250208034133"
+  },
+  {
+    "name": "Gale",
+    "rarity": "Raro",
+    "role": "Controle",
+    "gender": "Masculino",
+    "releaseYear": 2019,
+    "imageUrl": "https://static.wikia.nocookie.net/brawlstars/images/1/1e/Gale_Skin-Default.png/revision/latest/scale-to-width-down/268?cb=20220208174401"
+  },
+  {
+    "name": "Gene",
+    "rarity": "Raro",
+    "role": "Suporte",
+    "gender": "Masculino",
+    "releaseYear": 2019,
+    "imageUrl": "https://static.wikia.nocookie.net/brawlstars/images/5/54/Gene_Skin-Default.png/revision/latest/scale-to-width-down/268?cb=20200608115231"
+  },
+  {
+    "name": "Gray",
+    "rarity": "Épico",
+    "role": "Dano",
+    "gender": "Masculino",
+    "releaseYear": 2023,
+    "imageUrl": "https://static.wikia.nocookie.net/brawlstars/images/e/ed/Gray_Skin-Default.png/revision/latest/scale-to-width-down/268?cb=20230118044908"
+  },
+  {
+    "name": "Griff",
+    "rarity": "Épico",
+    "role": "Suporte",
+    "gender": "Masculino",
+    "releaseYear": 2023,
+    "imageUrl": "https://static.wikia.nocookie.net/brawlstars/images/0/0f/Griff_Skin-Default.png/revision/latest/scale-to-width-down/268?cb=20230202181146"
+  },
+  {
+    "name": "Grom",
+    "rarity": "Épico",
+    "role": "Dano",
+    "gender": "Masculino",
+    "releaseYear": 2023,
+    "imageUrl": "https://static.wikia.nocookie.net/brawlstars/images/0/0a/Grom_Skin-Default.png/revision/latest/scale-to-width-down/267?cb=20230214004157"
+  },
+  {
+    "name": "Gus",
+    "rarity": "Raro",
+    "role": "Suporte",
+    "gender": "Masculino",
+    "releaseYear": 2022,
+    "imageUrl": "https://static.wikia.nocookie.net/brawlstars/images/4/41/Gus_Skin-Default.png/revision/latest/scale-to-width-down/268?cb=20221226010744"
+  },
+  {
+    "name": "Hank",
+    "rarity": "Épico",
+    "role": "Tanque",
+    "gender": "Masculino",
+    "releaseYear": 2024,
+    "imageUrl": "https://static.wikia.nocookie.net/brawlstars/images/7/7f/Hank_Skin-Default.png/revision/latest/scale-to-width-down/268?cb=20230427101653"
+  },
+  {
+    "name": "Jacky",
+    "rarity": "Raro",
+    "role": "Tanque",
+    "gender": "Feminino",
+    "releaseYear": 2020,
+    "imageUrl": "https://static.wikia.nocookie.net/brawlstars/images/5/52/Jacky_Skin-Default.png/revision/latest/scale-to-width-down/268?cb=20200430211047"
+  },
+  {
+    "name": "Jae-yong",
+    "rarity": "Épico",
+    "role": "Dano",
+    "gender": "Masculino",
+    "releaseYear": 2024,
+    "imageUrl": "https://static.wikia.nocookie.net/brawlstars/images/3/3f/Jae-yong_Skin-Default.png/revision/latest/scale-to-width-down/268?cb=20250424170043"
+  },
+  {
+    "name": "Janet",
+    "rarity": "Épico",
+    "role": "Dano",
+    "gender": "Feminino",
+    "releaseYear": 2023,
+    "imageUrl": "https://static.wikia.nocookie.net/brawlstars/images/a/a7/Janet_Skin-Default.png/revision/latest/scale-to-width-down/268?cb=20230127120905"
+  },
+  {
+    "name": "Jessie",
+    "rarity": "Raro",
+    "role": "Suporte",
+    "gender": "Feminino",
+    "releaseYear": 2019,
+    "imageUrl": "https://static.wikia.nocookie.net/brawlstars/images/1/15/Jessie_Skin-Default.png/revision/latest/scale-to-width-down/268?cb=20250208020531"
+  },
+  {
+    "name": "Juju",
+    "rarity": "Épico",
+    "role": "Suporte",
+    "gender": "Feminino",
+    "releaseYear": 2024,
+    "imageUrl": "https://static.wikia.nocookie.net/brawlstars/images/e/e8/Juju_Skin-Default.png/revision/latest/scale-to-width-down/267?cb=20241029215018"
   },
   {
     "name": "Kaze",
-    "rarity": "Ultra Lendário",
-    "role": "Desconhecido",
+    "rarity": "Épico",
+    "role": "Dano",
     "gender": "Masculino",
     "releaseYear": 2024,
-    "imageUrl": "/brawlers/kaze.png"
+    "imageUrl": "https://static.wikia.nocookie.net/brawlstars/images/4/4d/Kaze_Skin-Default.png/revision/latest/scale-to-width-down/268?cb=20250424194117"
+  },
+  {
+    "name": "Kenji",
+    "rarity": "Épico",
+    "role": "Tanque",
+    "gender": "Masculino",
+    "releaseYear": 2024,
+    "imageUrl": "https://static.wikia.nocookie.net/brawlstars/images/0/08/Kenji_Skin-Default.png/revision/latest/scale-to-width-down/268?cb=20240829081020"
+  },
+  {
+    "name": "Kit",
+    "rarity": "Épico",
+    "role": "Dano",
+    "gender": "Feminino",
+    "releaseYear": 2023,
+    "imageUrl": "https://static.wikia.nocookie.net/brawlstars/images/1/15/Kit_Skin-Default.png/revision/latest/scale-to-width-down/268?cb=20231213205435"
+  },
+  {
+    "name": "Larry & Lawrie",
+    "rarity": "Épico",
+    "role": "Suporte",
+    "gender": "Masculino",
+    "releaseYear": 2024,
+    "imageUrl": "https://static.wikia.nocookie.net/brawlstars/images/f/ff/Larry_%26_Lawrie_Skin-Default.png/revision/latest/scale-to-width-down/268?cb=20240207083536"
+  },
+  {
+    "name": "Leon",
+    "rarity": "Épico",
+    "role": "Dano",
+    "gender": "Masculino",
+    "releaseYear": 2019,
+    "imageUrl": "https://static.wikia.nocookie.net/brawlstars/images/3/33/Leon_Skin-Default.png/revision/latest/scale-to-width-down/268?cb=20200303145443"
+  },
+  {
+    "name": "Lily",
+    "rarity": "Épico",
+    "role": "Suporte",
+    "gender": "Feminino",
+    "releaseYear": 2024,
+    "imageUrl": "https://static.wikia.nocookie.net/brawlstars/images/6/6a/Lily_Skin-Default.png/revision/latest/scale-to-width-down/268?cb=20240420171855"
+  },
+  {
+    "name": "Lola",
+    "rarity": "Épico",
+    "role": "Dano",
+    "gender": "Feminino",
+    "releaseYear": 2021,
+    "imageUrl": "https://static.wikia.nocookie.net/brawlstars/images/f/f1/Lola_Skin-Default.png/revision/latest/scale-to-width-down/268?cb=20211130034036"
+  },
+  {
+    "name": "Lou",
+    "rarity": "Épico",
+    "role": "Controle",
+    "gender": "Masculino",
+    "releaseYear": 2023,
+    "imageUrl": "https://static.wikia.nocookie.net/brawlstars/images/6/60/Lou_Skin-Default.png/revision/latest/scale-to-width-down/268?cb=20230705221518"
+  },
+  {
+    "name": "Lumi",
+    "rarity": "Épico",
+    "role": "Suporte",
+    "gender": "Feminino",
+    "releaseYear": 2025,
+    "imageUrl": "https://static.wikia.nocookie.net/brawlstars/images/5/53/Lumi_Skin-Default.png/revision/latest/scale-to-width-down/268?cb=20250226113935"
+  },
+  {
+    "name": "Maisie",
+    "rarity": "Épico",
+    "role": "Dano",
+    "gender": "Feminino",
+    "releaseYear": 2024,
+    "imageUrl": "https://static.wikia.nocookie.net/brawlstars/images/6/6a/Maisie_Skin-Default.png/revision/latest/scale-to-width-down/268?cb=20240302211932"
+  },
+  {
+    "name": "Mandy",
+    "rarity": "Épico",
+    "role": "Suporte",
+    "gender": "Feminino",
+    "releaseYear": 2023,
+    "imageUrl": "https://static.wikia.nocookie.net/brawlstars/images/9/95/Mandy_Skin-Default.png/revision/latest/scale-to-width-down/268?cb=20230213231248"
+  },
+  {
+    "name": "Max",
+    "rarity": "Raro",
+    "role": "Dano",
+    "gender": "Masculino",
+    "releaseYear": 2019,
+    "imageUrl": "https://static.wikia.nocookie.net/brawlstars/images/3/33/Max_Skin-Default.png/revision/latest/scale-to-width-down/267?cb=20201110222310"
+  },
+  {
+    "name": "Meeple",
+    "rarity": "Épico",
+    "role": "Suporte",
+    "gender": "Masculino",
+    "releaseYear": 2025,
+    "imageUrl": "https://static.wikia.nocookie.net/brawlstars/images/2/27/Meeple_Skin-Default.png/revision/latest/scale-to-width-down/268?cb=20241214062419"
+  },
+  {
+    "name": "Meg",
+    "rarity": "Épico",
+    "role": "Dano",
+    "gender": "Feminino",
+    "releaseYear": 2023,
+    "imageUrl": "https://static.wikia.nocookie.net/brawlstars/images/e/e2/Meg_Skin-Default.png/revision/latest/scale-to-width-down/268?cb=20230204211321"
+  },
+  {
+    "name": "Melodie",
+    "rarity": "Épico",
+    "role": "Suporte",
+    "gender": "Feminino",
+    "releaseYear": 2024,
+    "imageUrl": "https://static.wikia.nocookie.net/brawlstars/images/1/1f/Melodie_Skin-Default.png/revision/latest/scale-to-width-down/268?cb=20240228162702"
+  },
+  {
+    "name": "Mico",
+    "rarity": "Épico",
+    "role": "Dano",
+    "gender": "Masculino",
+    "releaseYear": 2023,
+    "imageUrl": "https://static.wikia.nocookie.net/brawlstars/images/d/da/Mico_Skin-Default.png/revision/latest/scale-to-width-down/268?cb=20231213205927"
+  },
+  {
+    "name": "Moe",
+    "rarity": "Épico",
+    "role": "Tanque",
+    "gender": "Masculino",
+    "releaseYear": 2024,
+    "imageUrl": "https://static.wikia.nocookie.net/brawlstars/images/c/c9/Moe_Skin-Default.png/revision/latest/scale-to-width-down/268?cb=20240827155659"
+  },
+  {
+    "name": "Mortis",
+    "rarity": "Raro",
+    "role": "Dano",
+    "gender": "Masculino",
+    "releaseYear": 2019,
+    "imageUrl": "https://static.wikia.nocookie.net/brawlstars/images/b/b2/Mortis_Skin-Default.png/revision/latest/scale-to-width-down/268?cb=20200520104613"
+  },
+  {
+    "name": "Mr. P",
+    "rarity": "Raro",
+    "role": "Suporte",
+    "gender": "Masculino",
+    "releaseYear": 2019,
+    "imageUrl": "https://static.wikia.nocookie.net/brawlstars/images/a/a4/Mr._P_Skin-Default.png/revision/latest/scale-to-width-down/268?cb=20200517073422"
+  },
+  {
+    "name": "Nani",
+    "rarity": "Épico",
+    "role": "Dano",
+    "gender": "Feminino",
+    "releaseYear": 2020,
+    "imageUrl": "https://static.wikia.nocookie.net/brawlstars/images/2/20/Nani_Skin-Default.png/revision/latest/scale-to-width-down/268?cb=20201128223906"
+  },
+  {
+    "name": "Nita",
+    "rarity": "Épico",
+    "role": "Tanque",
+    "gender": "Feminino",
+    "releaseYear": 2023,
+    "imageUrl": "https://static.wikia.nocookie.net/brawlstars/images/3/36/Nita_Skin-Default.png/revision/latest/scale-to-width-down/268?cb=20231213021935"
+  },
+  {
+    "name": "Ollie",
+    "rarity": "Épico",
+    "role": "Dano",
+    "gender": "Masculino",
+    "releaseYear": 2025,
+    "imageUrl": "https://static.wikia.nocookie.net/brawlstars/images/d/d3/Ollie_Skin-Default.png/revision/latest/scale-to-width-down/268?cb=20250211154456"
+  },
+  {
+    "name": "Otis",
+    "rarity": "Épico",
+    "role": "Suporte",
+    "gender": "Masculino",
+    "releaseYear": 2023,
+    "imageUrl": "https://static.wikia.nocookie.net/brawlstars/images/f/fe/Otis_Skin-Default.png/revision/latest/scale-to-width-down/268?cb=20230204020325"
+  },
+  {
+    "name": "Pam",
+    "rarity": "Raro",
+    "role": "Suporte",
+    "gender": "Feminino",
+    "releaseYear": 2019,
+    "imageUrl": "https://static.wikia.nocookie.net/brawlstars/images/6/68/Pam_Skin-Default.png/revision/latest/scale-to-width-down/268?cb=20201129223707"
+  },
+  {
+    "name": "Pearl",
+    "rarity": "Épico",
+    "role": "Dano",
+    "gender": "Feminino",
+    "releaseYear": 2024,
+    "imageUrl": "https://static.wikia.nocookie.net/brawlstars/images/8/81/Pearl_Skin-Default.png/revision/latest/scale-to-width-down/268?cb=20230907024954"
+  },
+  {
+    "name": "Penny",
+    "rarity": "Raro",
+    "role": "Suporte",
+    "gender": "Feminino",
+    "releaseYear": 2023,
+    "imageUrl": "https://static.wikia.nocookie.net/brawlstars/images/d/d6/Penny_Skin-Default.png/revision/latest/scale-to-width-down/268?cb=20230625003320"
+  },
+  {
+    "name": "Piper",
+    "rarity": "Épico",
+    "role": "Dano",
+    "gender": "Feminino",
+    "releaseYear": 2024,
+    "imageUrl": "https://static.wikia.nocookie.net/brawlstars/images/5/5d/Piper_Skin-Default.png/revision/latest/scale-to-width-down/268?cb=20240214093829"
+  },
+  {
+    "name": "Poco",
+    "rarity": "Épico",
+    "role": "Suporte",
+    "gender": "Masculino",
+    "releaseYear": 2023,
+    "imageUrl": "https://static.wikia.nocookie.net/brawlstars/images/2/24/Poco_Skin-Default.png/revision/latest/scale-to-width-down/268?cb=20230225175317"
+  },
+  {
+    "name": "R-T",
+    "rarity": "Épico",
+    "role": "Dano",
+    "gender": "Masculino",
+    "releaseYear": 2024,
+    "imageUrl": "https://static.wikia.nocookie.net/brawlstars/images/b/b7/R-T_Skin-Default.png/revision/latest/scale-to-width-down/267?cb=20240803092909"
+  },
+  {
+    "name": "Rico",
+    "rarity": "Raro",
+    "role": "Dano",
+    "gender": "Masculino",
+    "releaseYear": 2019,
+    "imageUrl": "https://static.wikia.nocookie.net/brawlstars/images/7/71/Rico_Skin-Default.png/revision/latest/scale-to-width-down/268?cb=20210320213742"
+  },
+  {
+    "name": "Rosa",
+    "rarity": "Épico",
+    "role": "Tanque",
+    "gender": "Feminino",
+    "releaseYear": 2021,
+    "imageUrl": "https://static.wikia.nocookie.net/brawlstars/images/3/34/Rosa_Skin-Default.png/revision/latest/scale-to-width-down/267?cb=20210118061719"
+  },
+  {
+    "name": "Ruffs",
+    "rarity": "Épico",
+    "role": "Suporte",
+    "gender": "Masculino",
+    "releaseYear": 2023,
+    "imageUrl": "https://static.wikia.nocookie.net/brawlstars/images/4/40/Ruffs_Skin-Default.png/revision/latest/scale-to-width-down/268?cb=20230210101310"
+  },
+  {
+    "name": "Sam",
+    "rarity": "Épico",
+    "role": "Tanque",
+    "gender": "Masculino",
+    "releaseYear": 2023,
+    "imageUrl": "https://static.wikia.nocookie.net/brawlstars/images/8/87/Sam_Skin-Default.png/revision/latest/scale-to-width-down/267?cb=20230206220911"
+  },
+  {
+    "name": "Sandy",
+    "rarity": "Épico",
+    "role": "Suporte",
+    "gender": "Masculino",
+    "releaseYear": 2020,
+    "imageUrl": "https://static.wikia.nocookie.net/brawlstars/images/8/80/Sandy_Skin-Default.png/revision/latest/scale-to-width-down/268?cb=20200226195634"
+  },
+  {
+    "name": "Shade",
+    "rarity": "Épico",
+    "role": "Dano",
+    "gender": "Masculino",
+    "releaseYear": 2024,
+    "imageUrl": "https://static.wikia.nocookie.net/brawlstars/images/6/64/Shade_Skin-Default.png/revision/latest/scale-to-width-down/268?cb=20241029215101"
+  },
+  {
+    "name": "Shelly",
+    "rarity": "Raro",
+    "role": "Dano",
+    "gender": "Feminino",
+    "releaseYear": 2019,
+    "imageUrl": "https://static.wikia.nocookie.net/brawlstars/images/5/5e/Shelly_Skin-Default.png/revision/latest/scale-to-width-down/268?cb=20250203173645"
+  },
+  {
+    "name": "Spike",
+    "rarity": "Raro",
+    "role": "Dano",
+    "gender": "Masculino",
+    "releaseYear": 2018,
+    "imageUrl": "https://static.wikia.nocookie.net/brawlstars/images/8/8e/Spike_Skin-Default.png/revision/latest/scale-to-width-down/267?cb=20230630135425"
+  },
+  {
+    "name": "Sprout",
+    "rarity": "Raro",
+    "role": "Controle",
+    "gender": "Masculino",
+    "releaseYear": 2020,
+    "imageUrl": "https://static.wikia.nocookie.net/brawlstars/images/e/ec/Sprout_Skin-Default.png/revision/latest/scale-to-width-down/267?cb=20200522051055"
+  },
+  {
+    "name": "Squeak",
+    "rarity": "Épico",
+    "role": "Dano",
+    "gender": "Masculino",
+    "releaseYear": 2023,
+    "imageUrl": "https://static.wikia.nocookie.net/brawlstars/images/c/cf/Squeak_Skin-Default.png/revision/latest/scale-to-width-down/268?cb=20230127144034"
+  },
+  {
+    "name": "Stu",
+    "rarity": "Épico",
+    "role": "Dano",
+    "gender": "Masculino",
+    "releaseYear": 2023,
+    "imageUrl": "https://static.wikia.nocookie.net/brawlstars/images/b/b8/Stu_Skin-Default.png/revision/latest/scale-to-width-down/268?cb=20250208040245"
+  },
+  {
+    "name": "Surge",
+    "rarity": "Épico",
+    "role": "Tanque",
+    "gender": "Masculino",
+    "releaseYear": 2023,
+    "imageUrl": "https://static.wikia.nocookie.net/brawlstars/images/c/cf/Surge_Skin-Default.png/revision/latest/scale-to-width-down/267?cb=20230206174617"
+  },
+  {
+    "name": "Tara",
+    "rarity": "Épico",
+    "role": "Suporte",
+    "gender": "Feminino",
+    "releaseYear": 2022,
+    "imageUrl": "https://static.wikia.nocookie.net/brawlstars/images/a/a7/Tara_Skin-Default.png/revision/latest/scale-to-width-down/267?cb=20221222225445"
+  },
+  {
+    "name": "Tick",
+    "rarity": "Épico",
+    "role": "Controle",
+    "gender": "Masculino",
+    "releaseYear": 2024,
+    "imageUrl": "https://static.wikia.nocookie.net/brawlstars/images/b/b1/Tick_Skin-Default.png/revision/latest/scale-to-width-down/268?cb=20240821175603"
+  },
+  {
+    "name": "Trunk",
+    "rarity": "Épico",
+    "role": "Tanque",
+    "gender": "Masculino",
+    "releaseYear": 2024,
+    "imageUrl": "https://static.wikia.nocookie.net/brawlstars/images/5/5a/Trunk_Skin-Default.png/revision/latest/scale-to-width-down/268?cb=20250625150733"
+  },
+  {
+    "name": "Willow",
+    "rarity": "Épico",
+    "role": "Dano",
+    "gender": "Feminino",
+    "releaseYear": 2024,
+    "imageUrl": "https://static.wikia.nocookie.net/brawlstars/images/4/40/Willow_Skin-Default.png/revision/latest/scale-to-width-down/268?cb=20240805095318"
   }
 ]
