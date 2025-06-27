@@ -1,4 +1,4 @@
-// TODO: json com os brawlers
+// TODO: ajustar json com os brawlers
 // TODO: Seleção de brawler diário
 // TODO: Melhorar a UI
 // TODO: Persistência de dados (localStorage)
@@ -8,7 +8,7 @@
 
 "use client";
 
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import Image from "next/image";
 import brawlersData from "../data/brawlers.json";
 
@@ -37,12 +37,28 @@ export default function Home() {
   const [currentGuess, setCurrentGuess] = useState("");
   const [gameWon, setGameWon] = useState(false);
   const [showRules, setShowRules] = useState(false);
+  const [suggestions, setSuggestions] = useState<Brawler[]>([]);
+  const [showSuggestions, setShowSuggestions] = useState(false);
 
   // Simplificado - em um jogo real, você teria mais brawlers
   const brawlers: Brawler[] = brawlersData;
 
   // Em um jogo real, isso seria aleatório ou predefinido por dia
   const targetBrawler = brawlers[0];
+
+  useEffect(() => {
+    if (currentGuess.length > 0) {
+      const filtered = brawlers.filter(brawler =>
+        brawler.name.toLowerCase().includes(currentGuess.toLowerCase())
+      ).slice(0, 5);
+
+      setSuggestions(filtered);
+      setShowSuggestions(filtered.length > 0);
+    } else {
+      setSuggestions([]);
+      setShowSuggestions(false);
+    }
+  }, [currentGuess, brawlers]);
 
   const handleGuess = () => {
     const guessedBrawler = brawlers.find(b => b.name.toLowerCase() === currentGuess.toLowerCase());
@@ -75,6 +91,11 @@ export default function Home() {
     setCurrentGuess("");
   };
 
+  const selectSuggestion = (brawlerName: string) => {
+    setCurrentGuess(brawlerName);
+    setShowSuggestions(false);
+  };
+
   return (
     <div className="flex flex-col min-h-screen bg-blue-900 text-white p-4">
       <header className="flex justify-between items-center mb-6 border-b border-blue-700 pb-4">
@@ -89,9 +110,9 @@ export default function Home() {
         </h1>
 
         <div className="flex-1 flex justify-end">
-          <span className="text-yellow-400">
-            #1
-          </span>
+        <span className="text-yellow-400">
+          #1
+        </span>
         </div>
       </header>
 
@@ -136,7 +157,7 @@ export default function Home() {
         </div>
       ) : (
         <div className="flex flex-col items-center mb-6">
-          <div className="w-full max-w-lg flex mb-4">
+          <div className="w-full max-w-lg flex mb-4 relative">
             <input
               type="text"
               value={currentGuess}
@@ -144,6 +165,8 @@ export default function Home() {
               placeholder="Digite o nome de um brawler..."
               className="flex-grow rounded-l-lg p-3 text-black"
               disabled={gameWon}
+              onFocus={() => currentGuess.length > 0 && setShowSuggestions(true)}
+              onBlur={() => setTimeout(() => setShowSuggestions(false), 150)}
             />
             <button
               onClick={handleGuess}
@@ -152,6 +175,31 @@ export default function Home() {
             >
               Enviar
             </button>
+
+            {showSuggestions && suggestions.length > 0 && (
+              <div className="absolute top-full left-0 right-0 mt-1 bg-white text-black rounded shadow-lg z-10">
+                <ul>
+                  {suggestions.map((brawler, index) => (
+                    <li
+                      key={index}
+                      className="flex items-center p-2 hover:bg-gray-100 cursor-pointer"
+                      onClick={() => selectSuggestion(brawler.name)}
+                    >
+                      <div className="w-8 h-8 mr-2 relative overflow-hidden rounded-full">
+                        <Image
+                          src={brawler.imageUrl}
+                          alt={brawler.name}
+                          width={32}
+                          height={32}
+                          className="object-cover"
+                        />
+                      </div>
+                      <span>{brawler.name}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
           </div>
         </div>
       )}
