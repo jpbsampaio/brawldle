@@ -1,4 +1,4 @@
-// TODO: ajustar json com os brawlers
+// TODO: ajustar json com os brawlers (épicos, míticos, lendários e ultra lendarios)
 // TODO: Seleção de brawler diário
 // TODO: Melhorar a UI
 // TODO: Persistência de dados (localStorage)
@@ -99,7 +99,8 @@ export default function Home() {
   return (
     <div className="flex flex-col min-h-screen bg-blue-900 text-white p-4">
       <header className="flex justify-between items-center mb-8 pb-4 border-b border-blue-700">
-        <button onClick={() => setShowRules(!showRules)} className="rounded-full bg-yellow-400 text-blue-900 font-bold w-10 h-10 flex items-center justify-center shadow-lg hover:scale-105 transition">
+        <button onClick={() => setShowRules(!showRules)}
+                className="rounded-full bg-yellow-400 text-blue-900 font-bold w-10 h-10 flex items-center justify-center shadow-lg hover:scale-105 transition">
           ?
         </button>
 
@@ -178,8 +179,9 @@ export default function Home() {
             {showSuggestions && suggestions.length > 0 && (
               <div className="absolute z-10 w-full bg-white text-black rounded-b-xl shadow-md overflow-hidden">
                 {suggestions.map((b, i) => (
-                  <div key={i} onClick={() => selectSuggestion(b.name)} className="flex items-center p-2 hover:bg-gray-100 cursor-pointer gap-3">
-                    <Image src={b.imageUrl} alt={b.name} width={32} height={32} className="rounded-full" />
+                  <div key={i} onClick={() => selectSuggestion(b.name)}
+                       className="flex items-center p-2 hover:bg-gray-100 cursor-pointer gap-3">
+                    <Image src={b.imageUrl} alt={b.name} width={32} height={32} className="rounded-full"/>
                     <span className="text-sm">{b.name}</span>
                   </div>
                 ))}
