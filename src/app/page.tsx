@@ -1,4 +1,4 @@
-// TODO: ajustar json com os brawlers (épicos, míticos, lendários e ultra lendarios)
+// TODO: ajustar json com os brawlers (míticos, lendários e ultra lendarios)
 // TODO: Seleção de brawler diário
 // TODO: Melhorar a UI
 // TODO: Persistência de dados (localStorage)
