@@ -18,7 +18,7 @@
   {
     "name": "Amber",
     "rarity": "Lendário",
-    "role": "Dano",
+    "role": "Controle",
     "gender": "Feminino",
     "releaseYear": 2020,
     "imageUrl": "https://static.wikia.nocookie.net/brawlstars/images/a/a3/Amber_Skin-Default.png/revision/latest/scale-to-width-down/268?cb=20230123182941"
@@ -161,10 +161,10 @@
   },
   {
     "name": "Chester",
-    "rarity": "Épico",
+    "rarity": "Lendário",
     "role": "Dano",
     "gender": "Masculino",
-    "releaseYear": 2023,
+    "releaseYear": 2022,
     "imageUrl": "https://static.wikia.nocookie.net/brawlstars/images/4/48/Chester_Skin-Default.png/revision/latest/scale-to-width-down/267?cb=20230206163847"
   },
   {
@@ -201,18 +201,18 @@
   },
   {
     "name": "Cordelius",
-    "rarity": "Épico",
-    "role": "Suporte",
+    "rarity": "Lendário",
+    "role": "Algoz",
     "gender": "Masculino",
-    "releaseYear": 2024,
+    "releaseYear": 2023,
     "imageUrl": "https://static.wikia.nocookie.net/brawlstars/images/1/1d/Cordelius_Skin-Default.png/revision/latest/scale-to-width-down/268?cb=20240301211603"
   },
   {
     "name": "Crow",
-    "rarity": "Épico",
-    "role": "Dano",
+    "rarity": "Lendário",
+    "role": "Algoz",
     "gender": "Masculino",
-    "releaseYear": 2020,
+    "releaseYear": 2017,
     "imageUrl": "https://static.wikia.nocookie.net/brawlstars/images/a/a2/Crow_Skin-Default.png/revision/latest/scale-to-width-down/268?cb=20201107182328"
   },
   {
@@ -233,10 +233,10 @@
   },
   {
     "name": "Draco",
-    "rarity": "Épico",
-    "role": "Dano",
+    "rarity": "Lendário",
+    "role": "Tanque",
     "gender": "Masculino",
-    "releaseYear": 2023,
+    "releaseYear": 2024,
     "imageUrl": "https://static.wikia.nocookie.net/brawlstars/images/f/fe/Draco_Skin-Default.png/revision/latest/scale-to-width-down/268?cb=20250208041054"
   },
   {
@@ -409,16 +409,16 @@
   },
   {
     "name": "Kenji",
-    "rarity": "Épico",
-    "role": "Tanque",
+    "rarity": "Lendário",
+    "role": "Algoz",
     "gender": "Masculino",
     "releaseYear": 2024,
     "imageUrl": "https://static.wikia.nocookie.net/brawlstars/images/0/08/Kenji_Skin-Default.png/revision/latest/scale-to-width-down/268?cb=20240829081020"
   },
   {
     "name": "Kit",
-    "rarity": "Épico",
-    "role": "Dano",
+    "rarity": "Lendário",
+    "role": "Suporte",
     "gender": "Feminino",
     "releaseYear": 2023,
     "imageUrl": "https://static.wikia.nocookie.net/brawlstars/images/1/15/Kit_Skin-Default.png/revision/latest/scale-to-width-down/268?cb=20231213205435"
@@ -433,10 +433,10 @@
   },
   {
     "name": "Leon",
-    "rarity": "Épico",
-    "role": "Dano",
+    "rarity": "Lendário",
+    "role": "Algoz",
     "gender": "Masculino",
-    "releaseYear": 2019,
+    "releaseYear": 2018,
     "imageUrl": "https://static.wikia.nocookie.net/brawlstars/images/3/33/Leon_Skin-Default.png/revision/latest/scale-to-width-down/268?cb=20200303145443"
   },
   {
@@ -505,10 +505,10 @@
   },
   {
     "name": "Meg",
-    "rarity": "Épico",
-    "role": "Dano",
+    "rarity": "Lendário",
+    "role": "Tanque",
     "gender": "Feminino",
-    "releaseYear": 2023,
+    "releaseYear": 2021,
     "imageUrl": "https://static.wikia.nocookie.net/brawlstars/images/e/e2/Meg_Skin-Default.png/revision/latest/scale-to-width-down/268?cb=20230204211321"
   },
   {
@@ -665,10 +665,10 @@
   },
   {
     "name": "Sandy",
-    "rarity": "Épico",
-    "role": "Suporte",
+    "rarity": "Lendário",
+    "role": "Controle",
     "gender": "Masculino",
-    "releaseYear": 2020,
+    "releaseYear": 2019,
     "imageUrl": "https://static.wikia.nocookie.net/brawlstars/images/8/80/Sandy_Skin-Default.png/revision/latest/scale-to-width-down/268?cb=20200226195634"
   },
   {
@@ -689,10 +689,10 @@
   },
   {
     "name": "Spike",
-    "rarity": "Raro",
+    "rarity": "Lendário",
     "role": "Dano",
     "gender": "Masculino",
-    "releaseYear": 2018,
+    "releaseYear": 2017,
     "imageUrl": "https://static.wikia.nocookie.net/brawlstars/images/8/8e/Spike_Skin-Default.png/revision/latest/scale-to-width-down/267?cb=20230630135425"
   },
   {
@@ -721,10 +721,10 @@
   },
   {
     "name": "Surge",
-    "rarity": "Épico",
-    "role": "Tanque",
+    "rarity": "Lendário",
+    "role": "Dano",
     "gender": "Masculino",
-    "releaseYear": 2023,
+    "releaseYear": 2020,
     "imageUrl": "https://static.wikia.nocookie.net/brawlstars/images/c/cf/Surge_Skin-Default.png/revision/latest/scale-to-width-down/267?cb=20230206174617"
   },
   {
