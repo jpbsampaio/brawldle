@@ -1,3 +1,4 @@
+// TODO: Ajustar a finalização do jogo (Atualmente o jogo não finaliza após vitória ou derrota)
 // TODO: Melhorar a UI (+/-)
 // TODO: compartilhamento do resultado com emojis
 // TODO: Animações com framer-motion
