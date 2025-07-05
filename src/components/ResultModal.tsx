@@ -72,7 +72,7 @@ export function ResultModal({ visible, onClose, brawler, guessCount, isWin }: Re
               className="border-white/30 text-black hover:bg-white/20"
               onClick={onClose}
             >
-              Continuar Jogando
+              Fechar
             </Button>
           </div>
         </CardContent>

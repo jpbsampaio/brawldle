@@ -5,15 +5,15 @@
 
 "use client";
 
-import { useEffect, useState } from "react";
+import {useEffect, useState} from "react";
 import brawlersData from "../data/brawlers.json";
-import { Toast } from "@/components/Toast";
-import { Header } from "@/components/Header";
-import { RulesModal } from "@/components/RulesModal";
-import { ResultModal } from "@/components/ResultModal";
-import { GuessInput } from "@/components/GuessInput";
-import { BrawlerGuessGrid } from "@/components/BrawlerGuessGrid";
-import { Footer } from "@/components/Footer";
+import {Toast} from "@/components/Toast";
+import {Header} from "@/components/Header";
+import {RulesModal} from "@/components/RulesModal";
+import {ResultModal} from "@/components/ResultModal";
+import {GuessInput} from "@/components/GuessInput";
+import {BrawlerGuessGrid} from "@/components/BrawlerGuessGrid";
+import {Footer} from "@/components/Footer";
 
 interface Brawler {
   name: string;
@@ -114,7 +114,7 @@ export default function Home() {
     });
 
     setTimeout(() => {
-      setToast((prev) => ({ ...prev, visible: false }));
+      setToast((prev) => ({...prev, visible: false}));
     }, 3000);
   };
 
@@ -165,6 +165,7 @@ export default function Home() {
 
     if (guessedBrawler.name === targetBrawler.name) {
       setGameWon(true);
+      console.log('gamewon:', gameWon)
     }
 
     setAnimatingIndex(guesses.length);
@@ -210,6 +211,7 @@ export default function Home() {
 
     if (guessedBrawler.name === targetBrawler.name) {
       setGameWon(true);
+      console.log('gamewon:', gameWon);
     }
 
     setAnimatingIndex(guesses.length);
@@ -223,8 +225,10 @@ export default function Home() {
     <div className="min-h-screen bg-gradient-to-br from-blue-900 via-purple-900 to-indigo-900 text-white">
       {/* fundo animado */}
       <div className="fixed inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute -top-40 -right-40 w-80 h-80 bg-yellow-400/10 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-pink-400/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
+        <div
+          className="absolute -top-40 -right-40 w-80 h-80 bg-yellow-400/10 rounded-full blur-3xl animate-pulse"></div>
+        <div
+          className="absolute -bottom-40 -left-40 w-80 h-80 bg-pink-400/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
       </div>
 
       <div className="relative z-10 container mx-auto px-4 py-6 max-w-4xl">
@@ -237,7 +241,7 @@ export default function Home() {
         />
 
         {/* Header */}
-        <Header onShowRules={() => setShowRules(!showRules)} />
+        <Header onShowRules={() => setShowRules(!showRules)}/>
 
         {/* Modal de regras */}
         <RulesModal
@@ -248,7 +252,8 @@ export default function Home() {
         {/* Modal de resultado (vitória/derrota) */}
         <ResultModal
           visible={gameWon}
-          onClose={() => setGameWon(false)}
+          onClose={() => {
+          }}
           brawler={targetBrawler}
           guessCount={guesses.length}
           isWin={true}
@@ -263,16 +268,14 @@ export default function Home() {
         />
 
         {/* Input */}
-        {!gameWon && (
-          <GuessInput
-            brawlers={brawlers}
-            currentGuess={currentGuess}
-            setCurrentGuess={setCurrentGuess}
-            onGuess={handleGuess}
-            onSelectBrawler={handleSelectBrawler} // Nova prop
-            isDisabled={gameWon || guesses.length >= 6}
-          />
-        )}
+        <GuessInput
+          brawlers={brawlers}
+          currentGuess={currentGuess}
+          setCurrentGuess={setCurrentGuess}
+          onGuess={handleGuess}
+          onSelectBrawler={handleSelectBrawler}
+          isDisabled={gameWon || guesses.length >= 6}
+        />
 
         {/* Grid do jogo */}
         <BrawlerGuessGrid
@@ -281,7 +284,7 @@ export default function Home() {
         />
 
         {/* Footer */}
-        <Footer />
+        <Footer/>
       </div>
     </div>
   );
