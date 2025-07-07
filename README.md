@@ -77,9 +77,11 @@ brawldle/
     - Percentual de acerto
 
 3. **Interface**
+    - Melhoria geral de UI
     - Animações com Framer Motion
     - internacionalização (i18n)
     - Melhores indicadores visuais
+    - Melhoria na sugestão de palpite
     - Ajuste de responsividade
 
 4. **Acessibilidade**
