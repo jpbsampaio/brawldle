@@ -1,36 +1,99 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🎮 Brawldle
 
-## Getting Started
+Um jogo diário inspirado no Wordle onde você precisa adivinhar o Brawler secreto do Brawl Stars.
 
-First, run the development server:
+![Version](https://img.shields.io/badge/version-1.0.0-green.svg)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## 📋 Sumário
+
+- [Visão Geral](#-visão-geral)
+- [Tecnologias](#-tecnologias)
+- [Funcionalidades](#-funcionalidades)
+- [Estrutura do Projeto](#-estrutura-do-projeto)
+- [Como Jogar](#-como-jogar)
+- [Melhorias Futuras](#-melhorias-futuras)
+- [Contribuição](#-contribuição)
+
+## 🎯 Visão Geral
+
+Brawldle é um jogo de adivinhação diário onde os jogadores tentam descobrir o Brawler secreto do Brawl Stars usando dicas sobre raridade, função, gênero e ano de lançamento. Cada dia apresenta um novo desafio com um Brawler diferente.
+
+## 💻 Tecnologias
+
+- Next.js 15
+- TypeScript
+- Tailwind CSS
+- React 19
+- Radix UI
+- Lucide React (Ícones)
+- Class Variance Authority
+
+## ✨ Funcionalidades
+
+- ✅ Jogo diário com Brawler diferente
+- ✅ Sistema de dicas por cores (Verde/Amarelo/Cinza)
+- ✅ Autocomplete com sugestões de Brawlers
+- ✅ Persistência de progresso no localStorage
+- ✅ Sistema de compartilhamento de resultados
+- ✅ Feedback visual com toasts
+
+## 📁 Estrutura do Projeto
+
+```
+brawldle/
+├── src/
+│   ├── app/              # Páginas e rotas
+│   ├── components/       # Componentes React
+│   │   ├── ui/          # Componentes de UI base
+│   │   ├── Header.tsx   # Cabeçalho do jogo
+│   │   ├── GuessInput.tsx # Input de palpites
+│   │   ├── GuessRow.tsx # Linha de palpite
+│   │   └── ...          # Outros componentes
+│   ├── data/            # Dados dos Brawlers
+│   └── lib/             # Utilitários
+├── public/              # Arquivos estáticos
+└── ...
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🎮 Como Jogar
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+1. **Objetivo**: Adivinhe o Brawler secreto do dia em até 6 tentativas
+2. **Palpites**: Digite o nome de um Brawler válido
+3. **Dicas por Cores**:
+    - 🟢 **Verde**: Atributo correto
+    - 🟡 **Amarelo**: Ano maior/menor que o correto
+    - ⚪ **Cinza**: Atributo incorreto
+4. **Atributos**: Nome, Raridade, Função, Gênero, Ano de Lançamento
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🚀 Melhorias Futuras
 
-## Learn More
+1. **Modos de Jogo**
+    - Modo endless (sem limite de tentativas)
+    - Modo speed (tempo limitado)
+    - Modo por imagem
 
-To learn more about Next.js, take a look at the following resources:
+2. **Estatísticas**
+    - Streak de vitórias
+    - Percentual de acerto
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+3. **Interface**
+    - Animações com Framer Motion
+    - internacionalização (i18n)
+    - Melhores indicadores visuais
+    - Ajuste de responsividade
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+4. **Acessibilidade**
+    - Suporte a leitores de tela
+    - Navegação por teclado
 
-## Deploy on Vercel
+## 🤝 Contribuição
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+1. Fork o projeto
+2. Crie sua Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit suas mudanças (`git commit -m 'Add some AmazingFeature'`)
+4. Push para a Branch (`git push origin feature/AmazingFeature`)
+5. Abra um Pull Request
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+Made with ❤️ by [jpbsampaio](https://github.com/jpbsampaio)

@@ -1,7 +1,3 @@
-// TODO: Melhorar a UI (+/-)
-// TODO: compartilhamento do resultado com emojis
-// TODO: Animações com framer-motion
-
 "use client";
 
 import {useEffect, useState} from "react";
