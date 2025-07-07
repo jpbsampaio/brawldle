@@ -1,4 +1,3 @@
-// TODO: Ajustar a finalização do jogo (Atualmente o jogo não finaliza após vitória ou derrota)
 // TODO: Melhorar a UI (+/-)
 // TODO: compartilhamento do resultado com emojis
 // TODO: Animações com framer-motion
@@ -42,6 +41,7 @@ export default function Home() {
   const [showRules, setShowRules] = useState(false);
   const [animatingIndex, setAnimatingIndex] = useState<number | null>(null);
   const [showDefeatModal, setShowDefeatModal] = useState(false);
+  const [showWinModal, setShowWinModal] = useState(false);
   const [toast, setToast] = useState({
     visible: false,
     message: "",
@@ -99,6 +99,10 @@ export default function Home() {
       localStorage.setItem("brawldle-guesses", JSON.stringify(guesses));
       localStorage.setItem("brawldle-won", gameWon.toString());
       localStorage.setItem("brawldle-date", getCurrentDate());
+
+      if (gameWon) {
+        setShowWinModal(true);
+      }
 
       if (guesses.length >= 6 && !gameWon) {
         setShowDefeatModal(true);
@@ -251,9 +255,8 @@ export default function Home() {
 
         {/* Modal de resultado (vitória/derrota) */}
         <ResultModal
-          visible={gameWon}
-          onClose={() => {
-          }}
+          visible={showWinModal}
+          onClose={() => setShowWinModal(false)}
           brawler={targetBrawler}
           guessCount={guesses.length}
           isWin={true}
@@ -275,6 +278,8 @@ export default function Home() {
           onGuess={handleGuess}
           onSelectBrawler={handleSelectBrawler}
           isDisabled={gameWon || guesses.length >= 6}
+          gameWon={gameWon}
+          attemptsExhausted={guesses.length >= 6 && !gameWon}
         />
 
         {/* Grid do jogo */}

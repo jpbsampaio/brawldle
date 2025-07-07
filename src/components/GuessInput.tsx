@@ -17,10 +17,12 @@ interface Brawler {
 interface GuessInputProps {
   brawlers: Brawler[];
   currentGuess: string;
-  setCurrentGuess: (value: string) => void;
+  setCurrentGuess: (guess: string) => void;
   onGuess: () => void;
-  onSelectBrawler: (brawlerName: string) => void; // Nova prop
+  onSelectBrawler: (brawlerName: string) => void;
   isDisabled: boolean;
+  gameWon: boolean;
+  attemptsExhausted: boolean;
 }
 
 export function GuessInput({
@@ -29,10 +31,18 @@ export function GuessInput({
                              setCurrentGuess,
                              onGuess,
                              onSelectBrawler,
-                             isDisabled
+                             isDisabled,
+                             gameWon,
+                             attemptsExhausted
                            }: GuessInputProps) {
   const [suggestions, setSuggestions] = useState<Brawler[]>([]);
   const [showSuggestions, setShowSuggestions] = useState(false);
+
+  const getPlaceholder = () => {
+    if (gameWon) return "Parabéns! Você acertou o Brawler do dia!";
+    if (attemptsExhausted) return "Game over! Tente novamente amanhã";
+    return "Digite o nome de um Brawler...";
+  };
 
   useEffect(() => {
     if (currentGuess.length > 0) {
@@ -89,10 +99,10 @@ export function GuessInput({
             <Input
               className="w-full h-12 text-lg bg-white/10 border-white/20 text-white placeholder:text-white/50 focus:bg-white/20 transition-all duration-200"
               type="text"
-              placeholder="Digite o nome do Brawler..."
+              placeholder={getPlaceholder()}
               value={currentGuess}
               onChange={handleInputChange}
-              onKeyPress={handleKeyPress}
+              onKeyDown={handleKeyPress}
               onFocus={() => currentGuess.length > 0 && setShowSuggestions(true)}
               onBlur={() => setTimeout(() => setShowSuggestions(false), 200)}
               disabled={isDisabled}
