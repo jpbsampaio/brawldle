@@ -165,7 +165,6 @@ export default function Home() {
 
     if (guessedBrawler.name === targetBrawler.name) {
       setGameWon(true);
-      console.log('gamewon:', gameWon)
     }
 
     setAnimatingIndex(guesses.length);
@@ -211,7 +210,6 @@ export default function Home() {
 
     if (guessedBrawler.name === targetBrawler.name) {
       setGameWon(true);
-      console.log('gamewon:', gameWon);
     }
 
     setAnimatingIndex(guesses.length);
