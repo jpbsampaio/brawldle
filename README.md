@@ -1,6 +1,6 @@
 # 🎮 Brawldle
 
-Um jogo diário inspirado no Wordle onde você precisa adivinhar o Brawler secreto do Brawl Stars.
+Um jogo diário inspirado no Globle/Termo onde você precisa adivinhar o Brawler secreto do Brawl Stars em até 6 tentativas.
 
 ![Version](https://img.shields.io/badge/version-1.0.0-green.svg)
 
@@ -77,9 +77,11 @@ brawldle/
     - Percentual de acerto
 
 3. **Interface**
+    - Melhoria geral de UI
     - Animações com Framer Motion
     - internacionalização (i18n)
     - Melhores indicadores visuais
+    - Melhoria na sugestão de palpite
     - Ajuste de responsividade
 
 4. **Acessibilidade**
