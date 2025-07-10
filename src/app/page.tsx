@@ -67,26 +67,31 @@ export default function Home() {
   }
 
   useEffect(() => {
-    if (typeof window !== "undefined") {
-      const savedDate = localStorage.getItem("brawldle-date");
-      const currentDate = getCurrentDate();
+    if (typeof window === "undefined") return;
+      
+    const savedDate = localStorage.getItem("brawldle-date");
+    const currentDate = getCurrentDate();
 
-      if (savedDate === currentDate) {
-        const savedGuesses = localStorage.getItem("brawldle-guesses");
-        const savedGameWon = localStorage.getItem("brawldle-won");
+    if (savedDate !== currentDate) {
+      localStorage.setItem("brawldle-date", currentDate);
+      localStorage.removeItem("brawldle-guesses");
+      localStorage.removeItem("brawldle-won");
+      return;
+    }
 
-        if (savedGuesses) {
-          setGuesses(JSON.parse(savedGuesses));
-        }
+    const savedGuesses = localStorage.getItem("brawldle-guesses");
+    const savedGameWon = localStorage.getItem("brawldle-won");
 
-        if (savedGameWon === "true") {
-          setGameWon(true);
-        }
-      } else {
-        localStorage.setItem("brawldle-date", currentDate);
-        localStorage.removeItem("brawldle-guesses");
-        localStorage.removeItem("brawldle-won");
-      }
+    if (savedGuesses) {
+      setGuesses(JSON.parse(savedGuesses));
+    }
+
+    if (savedGameWon === "true" && savedGuesses) {
+      const guesses: GuessResult[] = JSON.parse(savedGuesses) as GuessResult[];
+      const hasWon = guesses.some(
+        (guess) => guess.brawler.name === targetBrawler.name
+      );
+      setGameWon(hasWon);
     }
   }, []);
 
