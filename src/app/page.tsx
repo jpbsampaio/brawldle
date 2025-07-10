@@ -9,6 +9,7 @@ import {ResultModal} from "@/components/ResultModal";
 import {GuessInput} from "@/components/GuessInput";
 import {BrawlerGuessGrid} from "@/components/BrawlerGuessGrid";
 import {Footer} from "@/components/Footer";
+import posthog from "posthog-js";
 
 interface Brawler {
   name: string;
@@ -68,7 +69,7 @@ export default function Home() {
 
   useEffect(() => {
     if (typeof window === "undefined") return;
-      
+
     const savedDate = localStorage.getItem("brawldle-date");
     const currentDate = getCurrentDate();
 
@@ -123,6 +124,17 @@ export default function Home() {
     }, 3000);
   };
 
+  const trackBrawlerGuess = (brawlerName: string, isCorrect: boolean) => {
+    if (typeof window !== "undefined") {
+      posthog.capture('brawler_guess', {
+        brawler_name: brawlerName,
+        is_correct: isCorrect,
+        guess_number: guesses.length + 1,
+        target_brawler: targetBrawler.name
+      });
+    }
+  };
+
   const handleGuess = () => {
     if (gameWon || guesses.length >= 6) {
       showToastMessage(
@@ -170,6 +182,9 @@ export default function Home() {
 
     if (guessedBrawler.name === targetBrawler.name) {
       setGameWon(true);
+      trackBrawlerGuess(guessedBrawler.name, true);
+    } else {
+      trackBrawlerGuess(guessedBrawler.name, false);
     }
 
     setAnimatingIndex(guesses.length);
@@ -215,6 +230,9 @@ export default function Home() {
 
     if (guessedBrawler.name === targetBrawler.name) {
       setGameWon(true);
+      trackBrawlerGuess(guessedBrawler.name, true);
+    } else {
+      trackBrawlerGuess(guessedBrawler.name, false);
     }
 
     setAnimatingIndex(guesses.length);
