@@ -40,6 +40,13 @@ export default function Home() {
   const [showDefeatModal, setShowDefeatModal] = useState(false);
   const [showWinModal, setShowWinModal] = useState(false);
   const [isEndlessMode, setIsEndlessMode] = useState(false);
+  const [endlessModeWins, setEndlessModeWins] = useState<number>(() => {
+    if (typeof window !== "undefined") {
+      const savedWins = localStorage.getItem("brawldle-endless-wins");
+      return savedWins ? parseInt(savedWins) : 0;
+    }
+    return 0;
+  });
   const [endlessTargetBrawler, setEndlessTargetBrawler] = useState<Brawler | null>(null);
   const [toast, setToast] = useState({
     visible: false,
@@ -49,7 +56,7 @@ export default function Home() {
 
   const brawlers: Brawler[] = brawlersData;
   const dailyTargetBrawler = getTargetBrawler();
-  
+
   const targetBrawler = isEndlessMode ? (endlessTargetBrawler || dailyTargetBrawler) : dailyTargetBrawler;
 
   function getRandomBrawler(): Brawler {
@@ -67,7 +74,7 @@ export default function Home() {
   const toggleMode = () => {
     const newMode = !isEndlessMode;
     setIsEndlessMode(newMode);
-    
+
     if (newMode) {
       setEndlessTargetBrawler(getRandomBrawler());
       setGuesses([]);
@@ -84,15 +91,15 @@ export default function Home() {
       setCurrentGuess("");
       const savedDate = localStorage.getItem("brawldle-date");
       const currentDate = getCurrentDate();
-      
+
       if (savedDate === currentDate) {
         const savedGuesses = localStorage.getItem("brawldle-guesses");
         const savedGameWon = localStorage.getItem("brawldle-won");
-        
+
         if (savedGuesses) {
           setGuesses(JSON.parse(savedGuesses));
         }
-        
+
         if (savedGameWon === "true") {
           setGameWon(true);
         }
@@ -128,11 +135,22 @@ export default function Home() {
     return `${today.getFullYear()}-${today.getMonth() + 1}-${today.getDate()}`;
   }
 
+  /**
+   NOTE: esse código comentado serve para obter o brawler da vez no modo endless.
+
+   Não esqueça descomentado quando subir para ambiente!
+   */
   useEffect(() => {
-    if (isEndlessMode && !endlessTargetBrawler) {
-      setEndlessTargetBrawler(getRandomBrawler());
+    if (isEndlessMode && endlessTargetBrawler) {
+      // console.log("Brawler do modo endless:", endlessTargetBrawler.name);
     }
   }, [isEndlessMode, endlessTargetBrawler]);
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      localStorage.setItem("brawldle-endless-wins", endlessModeWins.toString());
+    }
+  }, [endlessModeWins]);
 
   useEffect(() => {
     if (typeof window === "undefined") return;
@@ -246,7 +264,7 @@ export default function Home() {
     if (guessedBrawler.name === targetBrawler.name) {
       setGameWon(true);
       trackBrawlerGuess(guessedBrawler.name, true);
-      
+
       if (isEndlessMode) {
         setTimeout(() => {
           showToastMessage("Parabéns! Quer tentar outro brawler?", "success");
@@ -293,6 +311,14 @@ export default function Home() {
     if (guessedBrawler.name === targetBrawler.name) {
       setGameWon(true);
       trackBrawlerGuess(guessedBrawler.name, true);
+
+      if (isEndlessMode) {
+        // Incrementa o contador de vitórias do modo endless
+        setEndlessModeWins(prev => prev + 1);
+        setTimeout(() => {
+          showToastMessage("Parabéns! Quer tentar outro brawler?", "success");
+        }, 1000);
+      }
     } else {
       trackBrawlerGuess(guessedBrawler.name, false);
     }
@@ -324,10 +350,11 @@ export default function Home() {
         />
 
         {/* Header */}
-        <Header 
+        <Header
           onShowRules={() => setShowRules(!showRules)}
           isEndlessMode={isEndlessMode}
           onToggleMode={toggleMode}
+          endlessModeWins={endlessModeWins}
         />
 
         {/* Modal de regras */}

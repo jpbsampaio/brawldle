@@ -1,15 +1,16 @@
-import { Button } from "./ui/button";
-import { Badge } from "./ui/badge";
-import { HelpCircle, Infinity } from "lucide-react";
+import {Button} from "./ui/button";
+import {Badge} from "./ui/badge";
+import {HelpCircle, Infinity} from "lucide-react";
 import Image from "next/image";
 
 interface HeaderProps {
   readonly onShowRules: () => void;
   readonly isEndlessMode: boolean;
   readonly onToggleMode: () => void;
+  readonly endlessModeWins: number;
 }
 
-export function Header({ onShowRules, isEndlessMode, onToggleMode }: HeaderProps) {
+export function Header({onShowRules, isEndlessMode, onToggleMode, endlessModeWins}: HeaderProps) {
   return (
     <header className="flex justify-between items-center mb-8 pb-6 border-b border-white/20">
       <Button
@@ -18,7 +19,7 @@ export function Header({ onShowRules, isEndlessMode, onToggleMode }: HeaderProps
         size="icon"
         className="rounded-full bg-yellow-400 hover:bg-yellow-500 text-blue-900 border-0 shadow-lg hover:scale-105 transition-all duration-200"
       >
-        <HelpCircle className="h-5 w-5" />
+        <HelpCircle className="h-5 w-5"/>
       </Button>
 
       <div className="text-center">
@@ -45,18 +46,23 @@ export function Header({ onShowRules, isEndlessMode, onToggleMode }: HeaderProps
           variant="outline"
           className="bg-white/10 hover:bg-white/20 text-white border-white/20 transition-all duration-200"
         >
-          <Infinity className="h-4 w-4 mr-2" />
+          <Infinity className="h-4 w-4 mr-2"/>
           {isEndlessMode ? "Diário" : "Endless"}
         </Button>
-        
-        {!isEndlessMode && (
-          <Badge
-            variant="secondary"
-            className="bg-yellow-400/20 text-yellow-400 border-yellow-400/30"
-          >
-            #{new Date().getDate()}
-          </Badge>
-        )}
+
+        <Badge
+          variant="secondary"
+          className={isEndlessMode
+            ? "bg-green-400/20 text-green-400 border-green-400/30"
+            : "bg-yellow-400/20 text-yellow-400 border-yellow-400/30"
+          }
+        >
+          {isEndlessMode
+            ? `${endlessModeWins} ${endlessModeWins === 1 ? 'vitória' : 'vitórias'}`
+            : `#${new Date().getDate()}`
+          }
+        </Badge>
+
       </div>
     </header>
   );
