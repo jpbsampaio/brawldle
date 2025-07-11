@@ -333,11 +333,16 @@ export default function Home() {
   return (
     <div className="min-h-screen custom-background text-white">
       {/* fundo animado */}
-      <div className="fixed inset-0 overflow-hidden pointer-events-none">
-        <div
-          className="absolute -top-40 -right-40 w-80 h-80 bg-yellow-400/10 rounded-full blur-3xl animate-pulse"></div>
-        <div
-          className="absolute -bottom-40 -left-40 w-80 h-80 bg-pink-400/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
+      <div className="fixed inset-0 overflow-hidden pointer-events-none z-0">
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="absolute top-0 left-0 min-w-full min-h-full object-cover"
+        >
+          <source src="/background.mp4" type="video/mp4"/>
+        </video>
       </div>
 
       <div className="relative z-10 container mx-auto px-4 py-6 max-w-4xl">
