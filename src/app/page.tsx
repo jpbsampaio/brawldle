@@ -39,6 +39,8 @@ export default function Home() {
   const [animatingIndex, setAnimatingIndex] = useState<number | null>(null);
   const [showDefeatModal, setShowDefeatModal] = useState(false);
   const [showWinModal, setShowWinModal] = useState(false);
+  const [isEndlessMode, setIsEndlessMode] = useState(false);
+  const [endlessTargetBrawler, setEndlessTargetBrawler] = useState<Brawler | null>(null);
   const [toast, setToast] = useState({
     visible: false,
     message: "",
@@ -46,7 +48,66 @@ export default function Home() {
   });
 
   const brawlers: Brawler[] = brawlersData;
-  const targetBrawler = getTargetBrawler();
+  const dailyTargetBrawler = getTargetBrawler();
+  
+  const targetBrawler = isEndlessMode ? (endlessTargetBrawler || dailyTargetBrawler) : dailyTargetBrawler;
+
+  function getRandomBrawler(): Brawler {
+    const randomIndex = Math.floor(Math.random() * brawlers.length);
+    return brawlers[randomIndex];
+  }
+
+  function getReleaseYearComparison(guessedYear: number, targetYear: number): "correct" | "higher" | "lower" | "incorrect" {
+    if (guessedYear === targetYear) return "correct";
+    if (guessedYear > targetYear) return "higher";
+    if (guessedYear < targetYear) return "lower";
+    return "incorrect";
+  }
+
+  const toggleMode = () => {
+    const newMode = !isEndlessMode;
+    setIsEndlessMode(newMode);
+    
+    if (newMode) {
+      setEndlessTargetBrawler(getRandomBrawler());
+      setGuesses([]);
+      setGameWon(false);
+      setShowDefeatModal(false);
+      setShowWinModal(false);
+      setCurrentGuess("");
+    } else {
+      setEndlessTargetBrawler(null);
+      setGuesses([]);
+      setGameWon(false);
+      setShowDefeatModal(false);
+      setShowWinModal(false);
+      setCurrentGuess("");
+      const savedDate = localStorage.getItem("brawldle-date");
+      const currentDate = getCurrentDate();
+      
+      if (savedDate === currentDate) {
+        const savedGuesses = localStorage.getItem("brawldle-guesses");
+        const savedGameWon = localStorage.getItem("brawldle-won");
+        
+        if (savedGuesses) {
+          setGuesses(JSON.parse(savedGuesses));
+        }
+        
+        if (savedGameWon === "true") {
+          setGameWon(true);
+        }
+      }
+    }
+  };
+
+  const startNewEndlessGame = () => {
+    setEndlessTargetBrawler(getRandomBrawler());
+    setGuesses([]);
+    setGameWon(false);
+    setShowDefeatModal(false);
+    setShowWinModal(false);
+    setCurrentGuess("");
+  };
 
   function getTargetBrawler(): Brawler {
     const today = new Date();
@@ -66,6 +127,12 @@ export default function Home() {
     const today = new Date();
     return `${today.getFullYear()}-${today.getMonth() + 1}-${today.getDate()}`;
   }
+
+  useEffect(() => {
+    if (isEndlessMode && !endlessTargetBrawler) {
+      setEndlessTargetBrawler(getRandomBrawler());
+    }
+  }, [isEndlessMode, endlessTargetBrawler]);
 
   useEffect(() => {
     if (typeof window === "undefined") return;
@@ -98,19 +165,21 @@ export default function Home() {
 
   useEffect(() => {
     if (typeof window !== "undefined" && guesses.length > 0) {
-      localStorage.setItem("brawldle-guesses", JSON.stringify(guesses));
-      localStorage.setItem("brawldle-won", gameWon.toString());
-      localStorage.setItem("brawldle-date", getCurrentDate());
+      if (!isEndlessMode) {
+        localStorage.setItem("brawldle-guesses", JSON.stringify(guesses));
+        localStorage.setItem("brawldle-won", gameWon.toString());
+        localStorage.setItem("brawldle-date", getCurrentDate());
+      }
 
       if (gameWon) {
         setShowWinModal(true);
       }
 
-      if (guesses.length >= 6 && !gameWon) {
+      if (!isEndlessMode && guesses.length >= 6 && !gameWon) {
         setShowDefeatModal(true);
       }
     }
-  }, [guesses, gameWon]);
+  }, [guesses, gameWon, isEndlessMode]);
 
   const showToastMessage = (message: string, type: "error" | "success" | "warning") => {
     setToast({
@@ -136,11 +205,12 @@ export default function Home() {
   };
 
   const handleGuess = () => {
-    if (gameWon || guesses.length >= 6) {
-      showToastMessage(
-        gameWon ? "Você já acertou o brawler do dia!" : "Você já usou todas as tentativas!",
-        "warning"
-      );
+    if (gameWon || (!isEndlessMode && guesses.length >= 6)) {
+      let message = "Você já usou todas as tentativas!";
+      if (gameWon) {
+        message = isEndlessMode ? "Você já acertou!" : "Você já acertou o brawler do dia!";
+      }
+      showToastMessage(message, "warning");
       return;
     }
 
@@ -169,20 +239,19 @@ export default function Home() {
         rarity: guessedBrawler.rarity === targetBrawler.rarity,
         role: guessedBrawler.role === targetBrawler.role,
         gender: guessedBrawler.gender === targetBrawler.gender,
-        releaseYear:
-          guessedBrawler.releaseYear === targetBrawler.releaseYear
-            ? "correct"
-            : guessedBrawler.releaseYear > targetBrawler.releaseYear
-              ? "higher"
-              : guessedBrawler.releaseYear < targetBrawler.releaseYear
-                ? "lower"
-                : "incorrect",
+        releaseYear: getReleaseYearComparison(guessedBrawler.releaseYear, targetBrawler.releaseYear),
       },
     };
 
     if (guessedBrawler.name === targetBrawler.name) {
       setGameWon(true);
       trackBrawlerGuess(guessedBrawler.name, true);
+      
+      if (isEndlessMode) {
+        setTimeout(() => {
+          showToastMessage("Parabéns! Quer tentar outro brawler?", "success");
+        }, 1000);
+      }
     } else {
       trackBrawlerGuess(guessedBrawler.name, false);
     }
@@ -217,14 +286,7 @@ export default function Home() {
         rarity: guessedBrawler.rarity === targetBrawler.rarity,
         role: guessedBrawler.role === targetBrawler.role,
         gender: guessedBrawler.gender === targetBrawler.gender,
-        releaseYear:
-          guessedBrawler.releaseYear === targetBrawler.releaseYear
-            ? "correct"
-            : guessedBrawler.releaseYear > targetBrawler.releaseYear
-              ? "higher"
-              : guessedBrawler.releaseYear < targetBrawler.releaseYear
-                ? "lower"
-                : "incorrect",
+        releaseYear: getReleaseYearComparison(guessedBrawler.releaseYear, targetBrawler.releaseYear),
       },
     };
 
@@ -243,7 +305,7 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-900 via-purple-900 to-indigo-900 text-white">
+    <div className="min-h-screen custom-background text-white">
       {/* fundo animado */}
       <div className="fixed inset-0 overflow-hidden pointer-events-none">
         <div
@@ -262,7 +324,11 @@ export default function Home() {
         />
 
         {/* Header */}
-        <Header onShowRules={() => setShowRules(!showRules)}/>
+        <Header 
+          onShowRules={() => setShowRules(!showRules)}
+          isEndlessMode={isEndlessMode}
+          onToggleMode={toggleMode}
+        />
 
         {/* Modal de regras */}
         <RulesModal
@@ -277,6 +343,8 @@ export default function Home() {
           brawler={targetBrawler}
           guessCount={guesses.length}
           isWin={true}
+          isEndlessMode={isEndlessMode}
+          onNewGame={startNewEndlessGame}
         />
 
         <ResultModal
@@ -285,6 +353,7 @@ export default function Home() {
           brawler={targetBrawler}
           guessCount={guesses.length}
           isWin={false}
+          isEndlessMode={isEndlessMode}
         />
 
         {/* Input */}
@@ -294,9 +363,10 @@ export default function Home() {
           setCurrentGuess={setCurrentGuess}
           onGuess={handleGuess}
           onSelectBrawler={handleSelectBrawler}
-          isDisabled={gameWon || guesses.length >= 6}
+          isDisabled={gameWon || (!isEndlessMode && guesses.length >= 6)}
           gameWon={gameWon}
-          attemptsExhausted={guesses.length >= 6 && !gameWon}
+          attemptsExhausted={!isEndlessMode && guesses.length >= 6 && !gameWon}
+          isEndlessMode={isEndlessMode}
         />
 
         {/* Grid do jogo */}

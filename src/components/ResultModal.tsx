@@ -6,17 +6,19 @@ import { useState } from "react";
 import { Toast } from "./Toast";
 
 interface ResultModalProps {
-  visible: boolean;
-  onClose: () => void;
-  brawler: {
+  readonly visible: boolean;
+  readonly onClose: () => void;
+  readonly brawler: {
     name: string;
     imageUrl: string;
   };
-  guessCount: number;
-  isWin: boolean;
+  readonly guessCount: number;
+  readonly isWin: boolean;
+  readonly isEndlessMode?: boolean;
+  readonly onNewGame?: () => void;
 }
 
-export function ResultModal({ visible, onClose, brawler, guessCount, isWin }: ResultModalProps) {
+export function ResultModal({ visible, onClose, brawler, guessCount, isWin, isEndlessMode, onNewGame }: ResultModalProps) {
   const [toastVisible, setToastVisible] = useState(false);
   const [toastMessage, setToastMessage] = useState("");
   const [toastType, setToastType] = useState<"success" | "error" | "warning">("success");
@@ -36,11 +38,12 @@ export function ResultModal({ visible, onClose, brawler, guessCount, isWin }: Re
       guessEmojis += isWin ? "🟩" : "🟥";
     }
 
-    return `Brawldle ${today} ${emoji}\n\n${guessEmojis}\n\nEu ${
-      isWin
-        ? `acertei em ${guessCount} tentativa${guessCount !== 1 ? "s" : ""}`
-        : "não acertei o brawler hoje"
-    }!\n\njogue em: brawldle.vercel.app`;
+    const tentativaText = guessCount !== 1 ? "s" : "";
+    const resultText = isWin
+      ? `acertei em ${guessCount} tentativa${tentativaText}`
+      : "não acertei o brawler hoje";
+
+    return `Brawldle ${today} ${emoji}\n\n${guessEmojis}\n\nEu ${resultText}!\n\njogue em: brawldle.vercel.app`;
   };
 
   const handleShare = () => {
@@ -102,7 +105,10 @@ export function ResultModal({ visible, onClose, brawler, guessCount, isWin }: Re
             </h2>
             <p className="text-lg mb-4">
               {isWin
-                ? `Você acertou em ${guessCount} tentativa${guessCount !== 1 ? "s" : ""}!`
+                ? (() => {
+                    const tentativas = guessCount !== 1 ? "s" : "";
+                    return `Você acertou em ${guessCount} tentativa${tentativas}!`;
+                  })()
                 : "Você usou todas as tentativas."}
             </p>
             <div className="my-6">
@@ -120,6 +126,17 @@ export function ResultModal({ visible, onClose, brawler, guessCount, isWin }: Re
               </p>
             </div>
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
+              {isEndlessMode && isWin && onNewGame && (
+                <Button
+                  className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white font-bold"
+                  onClick={() => {
+                    onNewGame();
+                    onClose();
+                  }}
+                >
+                  Novo Jogo
+                </Button>
+              )}
               <Button
                 className="bg-gradient-to-r from-yellow-400 to-orange-500 hover:from-yellow-500 hover:to-orange-600 text-blue-900 font-bold"
                 onClick={handleShare}

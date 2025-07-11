@@ -15,14 +15,15 @@ interface Brawler {
 }
 
 interface GuessInputProps {
-  brawlers: Brawler[];
-  currentGuess: string;
-  setCurrentGuess: (guess: string) => void;
-  onGuess: () => void;
-  onSelectBrawler: (brawlerName: string) => void;
-  isDisabled: boolean;
-  gameWon: boolean;
-  attemptsExhausted: boolean;
+  readonly brawlers: Brawler[];
+  readonly currentGuess: string;
+  readonly setCurrentGuess: (guess: string) => void;
+  readonly onGuess: () => void;
+  readonly onSelectBrawler: (brawlerName: string) => void;
+  readonly isDisabled: boolean;
+  readonly gameWon: boolean;
+  readonly attemptsExhausted: boolean;
+  readonly isEndlessMode: boolean;
 }
 
 export function GuessInput({
@@ -33,14 +34,19 @@ export function GuessInput({
                              onSelectBrawler,
                              isDisabled,
                              gameWon,
-                             attemptsExhausted
+                             attemptsExhausted,
+                             isEndlessMode
                            }: GuessInputProps) {
   const [suggestions, setSuggestions] = useState<Brawler[]>([]);
   const [showSuggestions, setShowSuggestions] = useState(false);
 
   const getPlaceholder = () => {
-    if (gameWon) return "Parabéns! Você acertou o Brawler do dia!";
-    if (attemptsExhausted) return "Game over! Tente novamente amanhã";
+    if (gameWon) {
+      return isEndlessMode ? "Parabéns! Você acertou!" : "Parabéns! Você acertou o Brawler do dia!";
+    }
+    if (attemptsExhausted && !isEndlessMode) {
+      return "Game over! Tente novamente amanhã";
+    }
     return "Digite o nome de um Brawler...";
   };
 
@@ -97,7 +103,7 @@ export function GuessInput({
         <div className="flex gap-2">
           <div className="flex-1 relative">
             <Input
-              className="w-full h-12 text-lg bg-white/10 border-white/20 text-white placeholder:text-white/50 focus:bg-white/20 transition-all duration-200"
+              className="w-full h-12 text-lg bg-white border-gray-300 text-black placeholder:text-gray-500 focus:bg-white focus:border-blue-500 transition-all duration-200"
               type="text"
               placeholder={getPlaceholder()}
               value={currentGuess}
@@ -112,11 +118,11 @@ export function GuessInput({
             {showSuggestions && suggestions.length > 0 && (
               <Card className="absolute z-20 w-full mt-1 bg-white/95 backdrop-blur-sm border-white/20">
                 <CardContent className="p-0">
-                  {suggestions.map((brawler, i) => (
-                    <div
-                      key={i}
+                  {suggestions.map((brawler) => (
+                    <button
+                      key={brawler.name}
                       onClick={() => selectSuggestion(brawler.name)}
-                      className="flex items-center p-3 hover:bg-blue-50 cursor-pointer transition-colors duration-150 first:rounded-t-lg last:rounded-b-lg"
+                      className="flex items-center p-3 hover:bg-blue-50 cursor-pointer transition-colors duration-150 first:rounded-t-lg last:rounded-b-lg w-full text-left"
                     >
                       <Image
                         src={brawler.imageUrl || "/placeholder.svg"}
@@ -134,7 +140,7 @@ export function GuessInput({
                       >
                         {brawler.rarity}
                       </Badge>
-                    </div>
+                    </button>
                   ))}
                 </CardContent>
               </Card>

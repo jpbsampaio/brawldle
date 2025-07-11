@@ -1,5 +1,12 @@
 import type { Metadata } from 'next';
+import { Lilita_One } from 'next/font/google';
 import './globals.css';
+
+const lilitaOne = Lilita_One({
+  subsets: ['latin'],
+  weight: '400',
+  variable: '--font-lilita-one',
+});
 
 export const metadata: Metadata = {
   title: 'Brawldle - Adivinhe o Brawler do dia!',
@@ -7,8 +14,6 @@ export const metadata: Metadata = {
   icons: {
     icon: [
       { url: '/favicon.ico', sizes: 'any' },
-      { url: '/favicon-16x16.png', sizes: '16x16' },
-      { url: '/favicon-32x32.png', sizes: '32x32' },
     ],
     apple: [
       { url: '/apple-touch-icon.png', sizes: '180x180' },
@@ -30,13 +35,13 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({
-                                     children,
-                                   }: {
-  children: React.ReactNode
+  children,
+}: {
+  readonly children: React.ReactNode
 }) {
   return (
     <html lang="pt-BR">
-    <body>{children}</body>
+    <body className={lilitaOne.variable}>{children}</body>
     </html>
   );
 }
