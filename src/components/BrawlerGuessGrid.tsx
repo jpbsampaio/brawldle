@@ -38,7 +38,7 @@ export function BrawlerGuessGrid({ guesses, animatingIndex }: BrawlerGuessGridPr
 
       {/* tentativas */}
       <div className="space-y-2">
-        {guesses.map((guess, index) => (
+        {guesses.toReversed().map((guess, index) => (
           <GuessRow
             key={index}
             guess={guess}
