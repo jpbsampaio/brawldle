@@ -118,3 +118,21 @@
     @apply bg-background text-foreground;
   }
 }
+
+.brawldle-title {
+  font-family: var(--font-lilita-one), cursive;
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 1);
+  color: white;
+}
+
+.red-part {
+  color: #dc2626;
+}
+
+.custom-background {
+  background-image: url('/background.gif');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}

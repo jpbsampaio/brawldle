@@ -1,12 +1,16 @@
-import { Button } from "./ui/button";
-import { Badge } from "./ui/badge";
-import { HelpCircle } from "lucide-react";
+import {Button} from "./ui/button";
+import {Badge} from "./ui/badge";
+import {HelpCircle, Infinity} from "lucide-react";
+import Image from "next/image";
 
 interface HeaderProps {
-  onShowRules: () => void;
+  readonly onShowRules: () => void;
+  readonly isEndlessMode: boolean;
+  readonly onToggleMode: () => void;
+  readonly endlessModeWins: number;
 }
 
-export function Header({ onShowRules }: HeaderProps) {
+export function Header({onShowRules, isEndlessMode, onToggleMode, endlessModeWins}: HeaderProps) {
   return (
     <header className="flex justify-between items-center mb-8 pb-6 border-b border-white/20">
       <Button
@@ -15,25 +19,51 @@ export function Header({ onShowRules }: HeaderProps) {
         size="icon"
         className="rounded-full bg-yellow-400 hover:bg-yellow-500 text-blue-900 border-0 shadow-lg hover:scale-105 transition-all duration-200"
       >
-        <HelpCircle className="h-5 w-5" />
+        <HelpCircle className="h-5 w-5"/>
       </Button>
 
       <div className="text-center">
-        <h1
-          className="text-4xl md:text-6xl font-black bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500 bg-clip-text text-transparent tracking-wide">
-          BRAWL<span className="text-red-400">DLE</span>
+        <h1 className="text-4xl md:text-6xl font-black brawldle-title tracking-wide">
+          BRAWL<span className="red-part">DLE</span>
         </h1>
+        <div className="flex justify-center mt-2 mb-1">
+          <Image
+            src="/brawl-stars-logo.png"
+            alt="Brawl Stars Logo"
+            width={60}
+            height={60}
+            className="brawl-logo"
+          />
+        </div>
         <p className="text-sm text-white/70 mt-1">
-          Adivinhe o Brawler do dia!
+          {isEndlessMode ? "Modo Endless - Tentativas ilimitadas!" : "Adivinhe o Brawler do dia!"}
         </p>
       </div>
 
-      <Badge
-        variant="secondary"
-        className="bg-yellow-400/20 text-yellow-400 border-yellow-400/30"
-      >
-        #{new Date().getDate()}
-      </Badge>
+      <div className="flex items-center gap-2">
+        <Button
+          onClick={onToggleMode}
+          variant="outline"
+          className="bg-white/10 hover:bg-white/20 text-white border-white/20 transition-all duration-200"
+        >
+          <Infinity className="h-4 w-4 mr-2"/>
+          {isEndlessMode ? "Diário" : "Endless"}
+        </Button>
+
+        <Badge
+          variant="secondary"
+          className={isEndlessMode
+            ? "bg-green-400/20 text-green-400 border-green-400/30"
+            : "bg-yellow-400/20 text-yellow-400 border-yellow-400/30"
+          }
+        >
+          {isEndlessMode
+            ? `${endlessModeWins} ${endlessModeWins === 1 ? 'vitória' : 'vitórias'}`
+            : `#${new Date().getDate()}`
+          }
+        </Badge>
+
+      </div>
     </header>
   );
 }
